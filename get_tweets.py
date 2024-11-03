@@ -1,5 +1,7 @@
-from auth import connect_to_endpoint, get_user_id
 import json
+
+from auth import connect_to_endpoint
+from auth import get_user_id
 
 
 def get_tweets(oauth, number):

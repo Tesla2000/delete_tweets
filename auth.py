@@ -1,8 +1,12 @@
-from requests_oauthlib import OAuth1Session
-import os
 import json
+import os
+
 import requests
 from env_variables import BEARER_TOKEN
+from requests_oauthlib import OAuth1Session
+
+from interfaces import Oauth1
+from interfaces import R1
 
 
 def authenticate(consumer_key, consumer_secret):
@@ -56,7 +60,7 @@ def authenticate(consumer_key, consumer_secret):
     return oauth
 
 
-def bearer_oauth(r):
+def bearer_oauth(r: R1):
     """
     Method required by bearer token authentication.
     """
@@ -78,7 +82,7 @@ def connect_to_endpoint(url, params):
     return response.json()
 
 
-def get_user_id(oauth):
+def get_user_id(oauth: Oauth1):
     """
     Method to get user id.
     """

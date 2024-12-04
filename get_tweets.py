@@ -1,4 +1,3 @@
-import json
 
 from auth import connect_to_endpoint
 from auth import get_user_id

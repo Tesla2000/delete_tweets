@@ -1,14 +1,11 @@
-import json
-import os
 
-from requests_oauthlib import OAuth1Session
 
-from interfaces import Oauth2
+from interfaces.interfaces import Oauth
 
 
 # payload = {"text": "Hello world!"}
 
-def post_tweet(oauth: Oauth2, payload):
+def post_tweet(oauth: Oauth, payload):
     response = oauth.post(
         "https://api.twitter.com/2/tweets",
         json=payload,
